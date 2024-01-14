@@ -38,8 +38,8 @@ const ShoeCard = ({
     <Link href={`/shoe/${slug}`}>
       <Wrapper>
         <ImageWrapper>
-          {variant === 'on-sale' && <Flag style={{'--background':`${COLORS.primary}`}}>Sale</Flag> }
-          {variant === 'new-release' && <Flag style={{'--background':`${COLORS.secondary}`}}>Just released!</Flag> }
+          {variant === 'on-sale' && <SaleFlag>Sale</SaleFlag> }
+          {variant === 'new-release' && <NewFlag>Just released!</NewFlag> }
           <Image alt="" src={imageSrc} />
         </ImageWrapper>
         <Spacer size={12} />
@@ -86,6 +86,13 @@ const Flag = styled.div`
   position:absolute;
   right:-4px;
   top:12px;
+`
+
+const SaleFlag = styled(Flag)`
+  background:${COLORS.primary}
+`
+const NewFlag = styled(Flag)`
+  background:${COLORS.secondary}
 `
 
 const Row = styled.div`
