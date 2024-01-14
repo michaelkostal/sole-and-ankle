@@ -40,7 +40,6 @@ const ShoeCard = ({
         <ImageWrapper>
           {variant === 'on-sale' && <Flag style={{'--background':`${COLORS.primary}`}}>Sale</Flag> }
           {variant === 'new-release' && <Flag style={{'--background':`${COLORS.secondary}`}}>Just released!</Flag> }
-          
           <Image alt="" src={imageSrc} />
         </ImageWrapper>
         <Spacer size={12} />
@@ -78,9 +77,11 @@ const Image = styled.img`
 const Flag = styled.div`
   background:var(--background);
   font-size:${14/16}rem;
-  font-weight:700;
+  font-weight:${WEIGHTS.bold};
   color: white;
-  padding:4px 7px 4px 11px;
+  padding:0 10px;
+  height:32px;
+  line-height:32px;
   border-radius:2px;
   position:absolute;
   right:-4px;
