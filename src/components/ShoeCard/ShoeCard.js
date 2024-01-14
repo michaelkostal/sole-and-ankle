@@ -85,7 +85,7 @@ const Name = styled.h3`
 
 const Price = styled.span``;
 const PriceSale = styled.span`
-  color: ${COLORS.gray[300]};
+  color: ${COLORS.gray[700]};
   text-decoration: line-through;
 `;
 
