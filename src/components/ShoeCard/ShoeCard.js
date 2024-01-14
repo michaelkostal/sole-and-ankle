@@ -33,10 +33,14 @@ const ShoeCard = ({
   const PriceElement = variant === 'on-sale'
   ? PriceSale
   : Price;
+ 
   return (
     <Link href={`/shoe/${slug}`}>
       <Wrapper>
         <ImageWrapper>
+          {variant === 'on-sale' && <Flag style={{'--background':`${COLORS.primary}`}}>Sale</Flag> }
+          {variant === 'new-release' && <Flag style={{'--background':`${COLORS.secondary}`}}>Just released!</Flag> }
+          
           <Image alt="" src={imageSrc} />
         </ImageWrapper>
         <Spacer size={12} />
@@ -70,6 +74,18 @@ const Image = styled.img`
   display:block;
   width:100%;
 `;
+
+const Flag = styled.div`
+  background:var(--background);
+  font-size:${14/16}rem;
+  font-weight:700;
+  color: white;
+  padding:4px 7px 4px 11px;
+  border-radius:2px;
+  position:absolute;
+  right:-4px;
+  top:12px;
+`
 
 const Row = styled.div`
   font-size: 1rem;
