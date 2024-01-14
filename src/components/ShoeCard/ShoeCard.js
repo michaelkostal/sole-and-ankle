@@ -70,6 +70,7 @@ const ImageWrapper = styled.div`
 `;
 
 const Image = styled.img`
+  border-radius: 16px 16px 4px 4px;
   display:block;
   width:100%;
 `;
